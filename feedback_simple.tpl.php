@@ -1,6 +1,8 @@
 <?php
 /**
+ * @file
  * Template file.
+ *
  * @param $link: path.
  * @param $align: left or right.
  * @param $top: distance from the top; include unit.
