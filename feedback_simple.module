@@ -10,7 +10,7 @@
 function feedback_simple_theme($existing, $type, $theme, $path) {
   return array(
     'feedback_simple' => array(
-      'arguments' => array(
+      'variables' => array(
         'link' => 'contact',
         'align' => 'right',
         'top' => '75%',
@@ -34,6 +34,9 @@ function feedback_simple_init() {
 /**
  * Implements hook_footer().
  */
-function feedback_simple_footer($main = 0) {
-  return theme('feedback_simple');
+function feedback_simple_page_alter(&$page) {
+  $page['page_bottom']['feedback_simple'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('feedback_simple'),
+  ); 
 }
