@@ -1,0 +1,39 @@
+<?php
+/**
+ * @file
+ * Module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function feedback_simple_theme($existing, $type, $theme, $path) {
+  return array(
+    'feedback_simple' => array(
+      'arguments' => array(
+        'link' => 'contact',
+        'align' => 'right',
+        'top' => '75%',
+        'alt' => t('feedback'),
+        'image' => drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
+        'height' => '100px',
+        'width' => '35px',
+      ),
+      'template' => 'feedback_simple',
+    ),
+  );
+}
+
+/**
+ * Implements hook_init().
+ */
+function feedback_simple_init() {
+  drupal_add_css(drupal_get_path('module', 'feedback_simple') .'/feedback_simple.css');
+}
+
+/**
+ * Implements hook_footer().
+ */
+function feedback_simple_footer($main = 0) {
+  return theme('feedback_simple');
+}
