@@ -1,6 +1,6 @@
 Feedback Simple
 
-A very simple, very light CSS only Feedback tab.
+A very simple, very light, CSS only Feedback tab.
 
 USAGE
 -----
