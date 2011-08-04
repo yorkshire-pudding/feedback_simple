@@ -3,13 +3,13 @@
  * @file
  * Template file.
  *
- * @param $link: path.
+ * @param $link: link path.
  * @param $align: left or right.
  * @param $top: distance from the top; include unit.
  * @param $alt: alt text.
- * @param $image: path to image.
- * @param $height: height of image; include unit.
- * @param $width: width of image; include unit.
+ * @param $image: image path.
+ * @param $height: image height; include unit.
+ * @param $width: image width; include unit.
  */
 ?>
 <div id='feedback_simple'>
