@@ -15,7 +15,7 @@ function feedback_simple_theme($existing, $type, $theme, $path) {
         'align' => 'right',
         'top' => '75%',
         'alt' => t('feedback'),
-        'image' => url(drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif'),
+        'image' => base_path() . drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
         'height' => '100px',
         'width' => '35px',
       ),
