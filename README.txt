@@ -13,6 +13,9 @@ USAGE
 - Take a look at feedback_simple.tpl.php for a list of variables you can modify
 in the theme layer.
 
+- No configuration required!
+
+
 CREDIT
 ------
 Adapted from a Pinchhost.com Tutorial.
