@@ -19,6 +19,7 @@ function feedback_simple_theme($existing, $type, $theme, $path) {
         'image' => base_path() . drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
         'height' => '100px',
         'width' => '35px',
+        'enabled' => true,
       ),
       'template' => 'feedback_simple',
     ),
@@ -29,6 +30,10 @@ function feedback_simple_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_feedback_simple().
  */
 function feedback_simple_preprocess_feedback_simple(&$variables) {
+  // Hide the tab when on the $link page.
+  if ($_GET['q'] == $variables['link']) {
+    $variables['enabled'] = false;
+  }
   // Allow Drupal to apply base_path and locale prefix outside of the
   // theme registry cache.
   $variables['link'] = url($variables['link']);

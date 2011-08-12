@@ -11,8 +11,10 @@
  * @param $image: image path.
  * @param $height: image height; include unit.
  * @param $width: image width; include unit.
+ * @param $enabled: true or false.
  */
 ?>
+<?php if ($enabled): ?>
 <div id='feedback_simple'>
   <a
     href='<?php print $link ?>'
@@ -25,3 +27,4 @@
         width='<?php print $width ?>' />
   </a>
 </div>
+<?php endif; ?>
