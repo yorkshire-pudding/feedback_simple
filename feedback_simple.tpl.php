@@ -5,7 +5,7 @@
  *
  * @param $link: link path.
  * @param $align: left or right.
- * @param $class: classes to apply to anchor tag.
+ * @param $class: array of classes to apply to anchor tag.
  * @param $top: distance from the top; include unit.
  * @param $alt: alt text.
  * @param $image: image path.
