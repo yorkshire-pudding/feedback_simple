@@ -13,6 +13,7 @@ function feedback_simple_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'link' => 'contact',
         'align' => 'right',
+        'class' => array('feedback_simple'),
         'top' => '75%',
         'alt' => t('feedback'),
         'image' => base_path() . drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
