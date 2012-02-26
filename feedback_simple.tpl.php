@@ -9,8 +9,8 @@
  * @param $top: distance from the top; include unit.
  * @param $alt: alt text.
  * @param $image: image path.
- * @param $height: image height; include unit.
- * @param $width: image width; include unit.
+ * @param $height: image height in pixels.
+ * @param $width: image width in pixels.
  * @param $enabled: true or false.
  */
 ?>
@@ -19,7 +19,7 @@
   <a
     href='<?php print $link ?>'
     class='feedback_simple-<?php print $align ?> <?php print implode(' ', $class) ?>'
-    style='top: <?php print $top ?>; height: <?php print $height ?>; width: <?php print $width ?>;'>
+    style='top: <?php print $top ?>; height: <?php print $height ?>px; width: <?php print $width ?>px;'>
       <img
         alt='<?php print $alt ?>'
         src='<?php print $image ?>'
