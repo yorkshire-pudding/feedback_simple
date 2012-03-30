@@ -40,18 +40,14 @@ function feedback_simple_preprocess_feedback_simple(&$variables) {
 }
 
 /**
- * Implements hook_init().
+ * Implements hook_page_build().
  */
-function feedback_simple_init() {
-  drupal_add_css(drupal_get_path('module', 'feedback_simple') . '/feedback_simple.css');
-}
-
-/**
- * Implements hook_footer().
- */
-function feedback_simple_page_alter(&$page) {
+function feedback_simple_page_build(&$page) {
   $page['page_bottom']['feedback_simple'] = array(
     '#type' => 'markup',
     '#markup' => theme('feedback_simple'),
+    '#attached' => array(
+      'css' => array(drupal_get_path('module', 'feedback_simple') . '/feedback_simple.css'),
+    ),
   );
 }
