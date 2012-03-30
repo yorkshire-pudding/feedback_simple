@@ -3,12 +3,12 @@
  * @file
  * Template file.
  *
- * @param $link: link path.
+ * @param $link: link href.
  * @param $align: left or right.
  * @param $class: array of classes to apply to anchor tag.
  * @param $top: distance from the top; include unit.
  * @param $alt: alt text.
- * @param $image: image path.
+ * @param $image: image href.
  * @param $height: image height in pixels.
  * @param $width: image width in pixels.
  * @param $enabled: true or false.
