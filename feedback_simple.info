@@ -1,4 +1,6 @@
 name = Feedback Simple
 description = A very simple, very light, CSS only Feedback tab.
+configure = admin/appearance/feedback-simple
 core = 7.x
+
 files[] = feedback_simple.test

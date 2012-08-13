@@ -3,15 +3,18 @@
  * @file
  * Template file.
  *
- * @param $link: link href.
- * @param $align: left or right.
- * @param $class: array of classes to apply to anchor tag.
- * @param $top: distance from the top; include unit.
- * @param $alt: alt text.
- * @param $image: image href.
- * @param $height: image height in pixels.
- * @param $width: image width in pixels.
- * @param $enabled: true or false.
+ * @param $enabled  true or false.
+ * @param $link  link href.
+ * @param $class  array of classes to apply to anchor tag.
+ * @param $align  left or right.
+ * @param $top  distance from the top; include unit.
+ * @param $image  image href.
+ * @param $alt  image alt text.
+ * @param $deny  paths to hide.
+ * @param $allow  paths to show.
+ * // Computed from image.
+ * @param $height  image height in pixels.
+ * @param $width  image width in pixels.
  */
 ?>
 <?php if ($enabled): ?>
