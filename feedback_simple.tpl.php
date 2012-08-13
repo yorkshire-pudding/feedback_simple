@@ -30,4 +30,4 @@
         width='<?php print $width ?>' />
   </a>
 </div>
-<?php endif; ?>
+<?php endif;

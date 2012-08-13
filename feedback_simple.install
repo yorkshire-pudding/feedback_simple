@@ -8,6 +8,7 @@
  * Implements hook_install().
  */
 function feedback_simple_install() {
+  $t = get_t();
   variable_set('feedback_simple', array(
     'enabled' => TRUE,
     'link' => 'contact',
@@ -15,7 +16,7 @@ function feedback_simple_install() {
     'align' => 'right',
     'top' => '75%',
     'image' => drupal_get_path('module', 'feedback_simple') . '/feedback_simple.gif',
-    'alt' => t('Feedback'),
+    'alt' => $t('Feedback'),
     'deny' => 'admin*',
     'allow' => 'admin/appearance/feedback-simple',
   ));
