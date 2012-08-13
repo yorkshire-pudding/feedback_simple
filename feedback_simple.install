@@ -27,3 +27,10 @@ function feedback_simple_install() {
 function feedback_simple_uninstall() {
   variable_del('feedback_simple');
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function feedback_simple_update_7100() {
+  feedback_simple_install();
+}
