@@ -67,7 +67,7 @@ function feedback_simple_system_settings($form) {
   $form['feedback_simple']['form_denyallow_markup'] = array(
     '#markup' => t('<h3>Visibility rules</h3><p>By default, the Feedback tab
       shows on every page except on the <em>link</em> set above. Paths can explicity be
-      set to hide or show below, by listing paths with wild cards, one per line.</p>'),
+      set to hide or show below, by listing them with wild cards, one per line.</p>'),
   );
   $form['feedback_simple']['deny'] = array(
     "#type" => 'textarea',
@@ -85,19 +85,21 @@ function feedback_simple_system_settings($form) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
+    '#submit' => array('feedback_simple_system_settings_save'),
   );
   $form['reset'] = array(
     '#type' => 'submit',
     '#value' => t('Restore Defaults'),
+    '#submit' => array('feedback_simple_system_settings_reset'),
   );
 
   return $form;
 }
 
 /**
- * Settings form submit.
+ * Settings save submit.
  */
-function feedback_simple_system_settings_submit($form, &$form_state) {
+function feedback_simple_system_settings_save($form, &$form_state) {
   foreach ($form_state['values'] as $key => $value) {
     if (!preg_match('/^form_|^op|^submit|^reset/', $key)) {
       $variables[$key] = $value;
@@ -108,11 +110,14 @@ function feedback_simple_system_settings_submit($form, &$form_state) {
   }
 
   variable_set('feedback_simple', $variables);
+  drupal_theme_rebuild();
+}
 
-  if ($form_state['values']['op'] == 'Restore Defaults') {
-    require_once drupal_get_path('module', 'feedback_simple') . '/feedback_simple.install';
-    feedback_simple_install();
-  }
-
+/**
+ * Settings reset submit.
+ */
+function feedback_simple_system_settings_reset($form, &$form_state) {
+  require_once drupal_get_path('module', 'feedback_simple') . '/feedback_simple.install';
+  feedback_simple_install();
   drupal_theme_rebuild();
 }
