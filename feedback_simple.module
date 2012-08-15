@@ -72,7 +72,9 @@ function feedback_simple_preprocess_feedback_simple(&$variables) {
   // Allow Drupal to apply base_path and locale prefix outside of the
   // theme registry cache.
   $variables['link'] = url($variables['link']);
-  $variables['image'] = url($variables['image']);
+
+  // Prevent breakage in subdirectory installs and multi-language sites.
+  $variables['image'] = base_path() . $variables['image'];
 
   // Deny and allow rules.
   if (drupal_match_path(current_path(), $variables['deny'])) {
