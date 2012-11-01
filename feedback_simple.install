@@ -12,6 +12,7 @@ function feedback_simple_install() {
   variable_set('feedback_simple', array(
     'enabled' => TRUE,
     'link' => 'contact',
+    'target' => '_self',
     'class' => array('feedback_simple'),
     'align' => 'right',
     'top' => '75%',
@@ -32,6 +33,17 @@ function feedback_simple_uninstall() {
 /**
  * Implements hook_update_N().
  */
+function feedback_simple_update_7101() {
+  // Add target, #1826198.
+  $settings = variable_get('feedback_simple', array());
+  $settings['target'] = '_self';
+  variable_set('feedback_simple', $settings);
+}
+
+/**
+ * Implements hook_update_N().
+ */
 function feedback_simple_update_7100() {
+  // Add admin settings, #1407784.
   feedback_simple_install();
 }

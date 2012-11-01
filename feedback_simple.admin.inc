@@ -26,6 +26,16 @@ function feedback_simple_system_settings($form) {
     '#description' => t('Drupal path to visit when clicked.'),
     '#default_value' => $variables['link'],
   );
+  $form['feedback_simple']['target'] = array(
+    '#type' => 'select',
+    '#title' => t('Target'),
+    '#description' => t('Location to open the link.'),
+    '#options' => array(
+      '_self' => t('Current window'),
+      '_blank' => t('New window'),
+    ),
+    '#default_value' => $variables['target'],
+  );
   $form['feedback_simple']['class'] = array(
     '#type' => 'textfield',
     '#title' => t('Class'),
@@ -117,7 +127,7 @@ function feedback_simple_system_settings_save($form, &$form_state) {
  * Settings reset submit.
  */
 function feedback_simple_system_settings_reset($form, &$form_state) {
-  require_once drupal_get_path('module', 'feedback_simple') . '/feedback_simple.install';
+  module_load_install('feedback_simple');
   feedback_simple_install();
   drupal_theme_rebuild();
 }

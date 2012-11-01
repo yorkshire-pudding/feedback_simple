@@ -43,6 +43,7 @@ function feedback_simple_theme($existing, $type, $theme, $path) {
     'variables' => array(
       'enabled' => $variables['enabled'],
       'link' => $variables['link'],
+      'target' => $variables['target'],
       'class' => $variables['class'],
       'align' => $variables['align'],
       'top' => $variables['top'],
@@ -73,7 +74,7 @@ function feedback_simple_preprocess_feedback_simple(&$variables) {
   // theme registry cache.
   $variables['link'] = url($variables['link']);
 
-  // Prevent breakage in subdirectory installs and multi-language sites.
+  // Prevent breakage in subdirectory and multi-language sites.
   $variables['image'] = base_path() . $variables['image'];
 
   // Deny and allow rules.
