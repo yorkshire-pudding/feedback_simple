@@ -26,7 +26,10 @@ function feedback_simple_menu() {
  */
 function feedback_simple_permission() {
   $permissions['administer feedback simple'] = array(
-    'title' => t('Configure the Feedback Simple tab.'),
+    'title' => t('Configure the Feedback Simple tab'),
+  );
+  $permissions['view feedback simple'] = array(
+    'title' => t('View the Feedback Simple tab'),
   );
 
   return $permissions;
@@ -68,6 +71,12 @@ function feedback_simple_preprocess_feedback_simple(&$variables) {
   // Hide the tab when on the $link page.
   if (current_path() == $variables['link']) {
     $variables['enabled'] = FALSE;
+    return;
+  }
+  // Hide the tab if user doesn't have access.
+  if (!user_access('view feedback simple')) {
+    $variables['enabled'] = FALSE;
+    return;
   }
 
   // Allow Drupal to apply base_path and locale prefix outside of the
