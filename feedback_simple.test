@@ -18,7 +18,7 @@ class FeedbackSimpleTestCase extends DrupalWebTestCase {
 
   public function setUp() {
     parent::setUp('feedback_simple');
-    $web_user = $this->drupalCreateUser(array('access content'));
+    $web_user = $this->drupalCreateUser(array('access content', 'view feedback simple'));
     $this->drupalLogin($web_user);
   }
 
